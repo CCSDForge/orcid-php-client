@@ -61,6 +61,7 @@ class Curl
             $this->setHTTPRequestHeader();
         }
         $this->setReturnTransfer();
+        $this->followLocation();
 
         return $this;
     }
@@ -100,6 +101,16 @@ class Curl
     public function setReturnTransfer()
     {
         return $this->setOpt(CURLOPT_RETURNTRANSFER, 1);
+    }
+
+    /**
+     * Follow location in case of redirection
+     *
+     * @return  $this
+     **/
+    public function followLocation()
+    {
+        return $this->setOpt(CURLOPT_FOLLOWLOCATION,true);
     }
 
     /**
