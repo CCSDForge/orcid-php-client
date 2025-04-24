@@ -20,7 +20,7 @@ class Oauth
     public const HOSTNAME  = 'orcid.org';
     public const AUTHORIZE = 'oauth/authorize';
     public const TOKEN     = 'oauth/token';
-    public const VERSION   = '2.0';
+    public const VERSION   = '3.0';
 
     /**
      * The http tranport object

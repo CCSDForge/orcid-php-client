@@ -380,7 +380,7 @@ class Work extends OAwork
         }
 
         if (isset($this->workUrl)) {
-            $work->appendChild($dom->createElementNS(self::$namespaceWork, "url", $this->workUrl));
+            $work->appendChild($dom->createElementNS(self::$namespaceCommon, "url", $this->workUrl));
         }
 
         //add authors
