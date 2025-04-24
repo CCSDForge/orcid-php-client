@@ -53,10 +53,16 @@ namespace Orcid\Work;
          'pdb' => 'http://identifiers.org/pdb/', 'pmc' => 'https://europepmc.org/articles/', 'pmid' => 'https://www.ncbi.nlm.nih.gov/pubmed/',
          'rfc' => 'https://tools.ietf.org/html/', 'rrid' => 'https://identifiers.org/rrid/', 'ssrn' => 'http://papers.ssrn.com/abstract_id=',
          'zbl' => 'http://zbmath.org/?format=complete&q='];
-     public const WORK_TYPES = ['artistic-performance', 'book-chapter', 'book-review', 'book', 'conference-abstract', 'conference-paper', 'conference-poster', 'data-set',
-         'dictionary-entry', 'disclosure', 'dissertation', 'edited-book', 'encyclopedia-entry', 'invention', 'journal-article', 'journal-issue', 'lecture-speech', 'license',
-         'magazine-article', 'manual', 'newsletter-article', 'newspaper-article', 'online-resource', 'other', 'patent', 'registered-copyright', 'report', 'research-technique',
-         'research-tool', 'spin-off-company', 'standards-and-policy', 'supervised-student-publication', 'technical-standard', 'test', 'translation', 'trademark', 'website', 'working-paper'];
+
+     // orcid work type list : https://info.orcid.org/ufaqs/what-work-types-does-orcid-support/
+     public const WORK_TYPES = ['annotation', 'artistic-performance', 'blog-post', 'book', 'book-chapter', 'book-review',
+         'cartographic-material', 'clinical-study', 'conference-output', 'conference-paper', 'conference-poster',
+         'conference-presentation', 'conference-proceedings', 'data-management-plan', 'data-set', 'design', 'dictionary-entry',
+         'dissertation-thesis', 'encyclopedia-entry', 'image', 'invention', 'journal-article', 'journal-issue', 'learning-object',
+         'lecture-speech', 'license', 'magazine-article', 'moving-image', 'musical-composition', 'newspaper-article',
+         'online-resource', 'other', 'patent', 'physical-object', 'preprint', 'public-speech', 'registered-copyright',
+         'report', 'research-tool', 'review', 'software', 'sound', 'standards-and-policy', 'supervised-student-publication',
+         'trademark', 'transcription', 'translation', 'website', 'working-paper'];
      public const AUTHOR_SEQUENCE_TYPE = ['first', 'additional'];
      public const AUTHOR_ROLE_TYPE = ['author', 'assignee', 'editor', 'chair-or-translator', 'co-investigator', 'co-inventor', 'graduate-student', 'other-inventor', 'principal-investigator', 'postdoctoral-researcher', 'support-staff'];
      /**
