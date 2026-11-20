@@ -2,6 +2,10 @@
 /**
  * @package   orcid-php-client
  * @author   Kouchoanou Théophane <theophane.kouchoanou@ccsd.cnrs.fr | theophane_malo@yahoo.fr>
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GPL-3.0-or-later
+ *
+ * Based on hubzero/orcid-php (Copyright (c) 2015 HUBzero Foundation, LLC.),
+ * released under the MIT License, see LICENSE.MIT
  */
 
 namespace Orcid;
@@ -566,7 +570,9 @@ class Oauth
      **/
     public function getProfile($orcid = null)
     {
-        if (!is_resource($this->http->getResource())) {
+        $resource = $this->http->getResource();
+        // Since PHP 8.0 curl handles are CurlHandle objects, not resources
+        if (!is_resource($resource) && !($resource instanceof \CurlHandle)) {
             $this->http->initialize();
         }
 

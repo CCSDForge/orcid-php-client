@@ -3,7 +3,10 @@
  * @package   orcid-php-client
  * @author    Sam Wilson <samwilson@purdue.edu>
    modified by Kouchoanou Théophane <theophane.kouchoanou@ccsd.cnrs.fr>
- * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GPL-3.0-or-later
+ *
+ * Based on hubzero/orcid-php (Copyright (c) 2015 HUBzero Foundation, LLC.),
+ * released under the MIT License, see LICENSE.MIT
  */
 
 namespace Orcid\Http;
@@ -15,7 +18,7 @@ class Curl
 {
     /**
      * The connection resource
-     * @var  resource
+     * @var  resource|\CurlHandle|null
      **/
     private $resource = null;
     /**
@@ -273,13 +276,18 @@ class Curl
      **/
     public function close()
     {
-        curl_close($this->resource);
+        if ($this->resource) {
+            curl_close($this->resource);
+        }
+        // curl_close() is a no-op since PHP 8.0: drop the handle so a closed
+        // connection can be detected and re-initialized
+        $this->resource = null;
 
         return $this;
     }
 
     /**
-     * @return resource
+     * @return resource|\CurlHandle|null
      */
     public function getResource()
     {
